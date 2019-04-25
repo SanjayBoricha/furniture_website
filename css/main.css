@@ -133,12 +133,13 @@ header > ul {
   display: inline-flex;
   justify-content: center;
   background: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 header > ul li {
   font-size: 1rem;
   padding: 5px 10px;
-  font-weight: bold;
+  font-weight: normal;
   background: #fff;
   transition: background 0.5s;
   color: #333;
@@ -153,6 +154,7 @@ header > ul li div.dropdown {
   width: 180%;
   display: none;
   z-index: 100;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 header > ul li div.dropdown ul li {
@@ -183,6 +185,7 @@ header ul li:hover .dropdown {
   flex-direction: column;
   align-items: center;
   padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 .product-card .product-img {
   position: relative;
