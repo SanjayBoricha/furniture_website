@@ -13,7 +13,6 @@
   text-decoration: none;
   list-style: none;
   font-family: core_sans, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #fff;
 }
 
 html {
@@ -25,7 +24,7 @@ body {
   width: 100vw;
   height: 100vh;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
   display: flex;
 }
 
@@ -43,6 +42,9 @@ div.left {
   border-right: 5px solid #000;
   width: 20vw;
 }
+div.left * {
+  color: #fff;
+}
 div.right {
   right: 0;
   width: 80vw;
@@ -53,12 +55,100 @@ div.right * {
   color: #000;
 }
 
-div.left ul li {
+div.left ul li:nth-child(1) {
   font-size: 1.5rem;
+}
+
+div.left ul li {
+  font-size: 1.2rem;
   text-align: center;
   text-transform: capitalize;
 }
 
 p {
   text-align: justify;
+}
+
+.form {
+  padding: 20px;
+}
+
+select,
+option {
+  font-size: 0.95rem;
+  padding: 0.3em 0.5em;
+  border: 1px solid #ddd;
+  outline: none;
+  text-transform: capitalize;
+}
+
+input[type="text"],
+input[type="submit"],
+input[type="reset"] {
+  font-size: 0.95rem;
+  padding: 0.3em 0.5em;
+  border: 1px solid #ddd;
+  outline: none;
+  height: 40px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  border: none;
+  padding: 0.3em 1em;
+  background: linear-gradient(45deg, rgb(0, 241, 32), rgb(0, 146, 7));
+  color: #fff;
+  cursor: pointer;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  text-transform: capitalize;
+}
+
+input[type="file"] {
+  width: 150px;
+  height: 40px;
+  outline: none;
+  overflow: hidden;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+input[type="file"]::before {
+  width: 150px;
+  height: 40px;
+  color: #ffff;
+  content: "Select An Image";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255, 136, 0);
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  backface-visibility: hidden;
+}
+
+label {
+  text-transform: capitalize;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  padding: 10px;
+  height: 50px;
+}
+tr:last-child td:first-child {
+  display: flex;
+  justify-content: flex-end;
+  width: 250px;
 }
