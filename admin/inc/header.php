@@ -21,6 +21,6 @@ require "../config/db.php";
             <li>hi , <?php echo $_SESSION['uname']; ?></li>
             <li><a href="../logout.php">logout</a></li>
             <li><a href="index.php">dashbord</a></li>
-            <li><a href="add_product.php">add product</a></li>
+            <li><a href="addproduct.php">add product</a></li>
         </ul>
     </div>

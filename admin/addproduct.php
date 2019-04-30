@@ -106,7 +106,23 @@ if (isset($_POST['submit-insert'])) {
     $prod_img_size = $prod_img['size'];
     $prod_img_error = $prod_img['error'];
 
+    if (empty($sub_cat) || empty($prod_name) || empty($prod_img_name)) {
+        header('Location: ?error=emptyfield');
+        exit();
+    } else {
+        $last_prod_query = "select p_id from products";
+        $last_prod = mysqli_query($conn,$last_prod_query);
+        $last_prod_id = mysqli_fetch_assoc($conn,$last_prod);
+        echo $last_prod_id['p_id'];
+        $prod_img_new_location = 'image/sub_cat'.$sub_cat.'/'.$last_prod_id['p_id'];
+    }
+
 }
+
+        $last_prod_query = "select p_id from products";     
+        $last_prod = mysqli_query($conn,$last_prod_query);
+        $last_prod_id = mysqli_fetch_assoc($last_prod);
+        echo $last_prod_id['p_id'];
 
 ?>
 <script type="text/javascript">
