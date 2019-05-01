@@ -60,19 +60,29 @@ $result_cat = mysqli_query($conn, $query_cat);
             <li><?php echo $category_name; ?>
                 <div class="dropdown">
                     <?php
-    $query_sub_cat = "select * from sub_cat where category='$category_name'";
-    $result_sub_cat = mysqli_query($conn, $query_sub_cat);
-    while ($row_sub_cat = mysqli_fetch_assoc($result_sub_cat)):
-        $sub_cat_id = $row_sub_cat['sc_id'];
-        $sub_category_name = $row_sub_cat["sc_name"];
+                $query_sub_cat = "select * from sub_cat where category='$category_name'";
+                $result_sub_cat = mysqli_query($conn, $query_sub_cat);
+                while ($row_sub_cat = mysqli_fetch_assoc($result_sub_cat)):
+                    $sub_cat_id = $row_sub_cat['sc_id'];
+                    $sub_category_name = $row_sub_cat["sc_name"];
 
-        ?>
+                    if (isset($_GET['sc_id'])):
+                        if ($sub_cat_id == $_GET['sc_id']):
+                            ?>
+                            <ul>
+                                <a href="products.php?sc_id=<?php echo $sub_cat_id; ?>">
+                                    <li class="active"><?php echo $sub_category_name; ?></li>
+                                </a>
+                            </ul>
+                            <?php
+                    else:
+                    ?>
                     <ul>
                         <a href="products.php?sc_id=<?php echo $sub_cat_id; ?>">
                             <li><?php echo $sub_category_name; ?></li>
                         </a>
                     </ul>
-                    <?php endwhile;?>
+                    <?php endif; endif; endwhile;?>
 
                 </div>
             </li>

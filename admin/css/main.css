@@ -60,8 +60,8 @@ div.left ul li:nth-child(1) {
 }
 
 div.left ul li {
-  font-size: 1.2rem;
-  text-align: center;
+  font-size: 1rem;
+  text-align: left;
   text-transform: capitalize;
 }
 
@@ -123,7 +123,7 @@ input[type="file"]::before {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(202, 22, 15);
+  background: rgb(15, 202, 124);
   padding: 5px 8px;
   outline: none;
   white-space: nowrap;
@@ -146,8 +146,42 @@ td {
   padding: 10px;
   height: 50px;
 }
-tr:last-child td:first-child {
+.form tr:last-child td:first-child {
   display: flex;
   justify-content: flex-end;
   width: 250px;
+}
+
+.filter {
+  display: none;
+}
+
+.table table tbody tr td img {
+  height: 50px;
+}
+.table table thead tr {
+  background: rgb(91, 212, 212);
+}
+.table table tbody tr {
+  background: #cdd;
+}
+.table table tbody tr:nth-child(odd) {
+  background: #8dd;
+}
+.table table tr td {
+  padding: 10px 20px;
+}
+
+.table table tbody tr td a {
+  padding: 5px 10px;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.delete {
+  background: rgb(211, 44, 22);
+}
+
+.edit {
+  background: rgb(23, 180, 23);
 }

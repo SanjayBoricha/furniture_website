@@ -8,26 +8,22 @@ if (isset($_GET['sc_id'])):
     <?php while ($product = mysqli_fetch_assoc($products)):
         $id = $product['p_id'];
         $name = $product['p_name'];
+        $price = $product['price'];
         $img = $product['p_image'];?>
-
-
-
 
     <div class="product-card">
         <a href="product.php?p_id=<?php echo $id; ?>">
             <div class="product-img">
-                <img src="<?php echo $img; ?>" alt="sofa image">
+                <img src="<?php echo $img; ?>">
             </div>
             <div class="product-content">
                 <p class="product-name">
                     <?php echo $name; ?>
+                    <?php echo "$",$price; ?>
                 </p>
             </div>
         </a>
     </div>
-
-
-
 
     <?php endwhile;?>
 </div>

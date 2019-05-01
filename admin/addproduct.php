@@ -70,7 +70,15 @@
                         <label>product name</label>
                     </td>
                     <td>
-                        <input type="text" name="pname" placeholder="eg.chronicle sofa">
+                        <input type="text" name="name" placeholder="eg.chronicle sofa">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>product price</label>
+                    </td>
+                    <td>
+                        <input type="text" name="price" placeholder="eg. 2000">
                     </td>
                 </tr>
                 <tr>
@@ -78,7 +86,7 @@
                         <label>product image</label>
                     </td>
                     <td>
-                        <input type="file" name="p_img" placeholder="img">
+                        <input type="file" name="img" placeholder="img">
                     </td>
                 </tr>
                 <tr>
@@ -97,8 +105,9 @@
 
 if (isset($_POST['submit-insert'])) {
     $sub_cat = $_POST['sub_cat'];
-    $prod_name = $_POST['pname'];
-    $prod_img = $_FILES['p_img'];
+    $prod_name = $_POST['name'];
+    $prod_price = $_POST['price'];
+    $prod_img = $_FILES['img'];
 
     $prod_img_name = $prod_img['name'];
     $prod_img_type = $prod_img['type'];
@@ -110,34 +119,30 @@ if (isset($_POST['submit-insert'])) {
         header('Location: ?error=emptyfield');
         exit();
     } else {
-        $last_prod_query = "select p_id from products";
-        $last_prod = mysqli_query($conn,$last_prod_query);
-        $last_prod_id = mysqli_fetch_assoc($conn,$last_prod);
-        echo $last_prod_id['p_id'];
-        $prod_img_new_location = 'image/sub_cat'.$sub_cat.'/'.$last_prod_id['p_id'];
+
+        $query1 = "SELECT MAX(p_id) FROM products";
+		$result1 = mysqli_query($conn, $query1);
+		$row = mysqli_fetch_assoc($result1);			
+		$last_prod_id = $row['MAX(p_id)']+1;
+
+        $fileExt = explode('.', $prod_img_name);
+        $fileActualExt = strtolower(end($fileExt));
+        $prod_img_new_location = '../image/sub_cat/'.$sub_cat.'/'.$last_prod_id.'.'.$fileActualExt;
+
+        move_uploaded_file($prod_img_location,$prod_img_new_location);
+
+        $p_image = 'image/sub_cat/'.$sub_cat.'/'.$last_prod_id.'.'.$fileActualExt;
+
+        $insert_prod_query = "insert into products(p_id,sc_id,p_name,price,p_image) values('$last_prod_id','$sub_cat','$prod_name','$prod_price','$p_image')";
+        
+        if (mysqli_query($conn,$insert_prod_query)) {
+            header('Location: ?success');
+        } else {
+            echo "ERROR";
+        } 
     }
-
 }
-
-        $last_prod_query = "select p_id from products";     
-        $last_prod = mysqli_query($conn,$last_prod_query);
-        $last_prod_id = mysqli_fetch_assoc($last_prod);
-        echo $last_prod_id['p_id'];
 
 ?>
-<script type="text/javascript">
-var sel1 = document.querySelector('#sel1');
-var sel2 = document.querySelector('#sel2');
-var options2 = sel2.querySelectorAll('option');
 
-function giveSelection(selValue) {
-    sel2.innerHTML = '';
-    for (var i = 0; i < options2.length; i++) {
-        if (options2[i].dataset.option === selValue) {
-            sel2.appendChild(options2[i]);
-        }
-    }
-}
-giveSelection(sel1.value);
-</script>
 <?php require "inc/footer.php";?>
