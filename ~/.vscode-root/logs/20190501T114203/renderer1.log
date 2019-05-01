@@ -1,0 +1,2 @@
+[2019-05-01 11:43:17.748] [renderer1] [error] connect ENOENT /opt/lampp/htdocs/furniture_website/~/.vscode-root/1.31.1-shared.sock: Error: connect ENOENT /opt/lampp/htdocs/furniture_website/~/.vscode-root/1.31.1-shared.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (net.js:1161:14)

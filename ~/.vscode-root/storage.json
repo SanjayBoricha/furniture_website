@@ -1,0 +1,24 @@
+{
+    "telemetry.machineId": "8a42eefe442830fe341e8015745bfd1dad6a8606ea43f292ae92e4a1624892f5",
+    "openedPathsList": {
+        "workspaces2": [
+            "file:///opt/lampp/htdocs/furniture_website"
+        ],
+        "files2": []
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#1e1e1e",
+    "windowsState": {
+        "openedWindows": [],
+        "lastActiveWindow": {
+            "backupPath": "/opt/lampp/htdocs/furniture_website/~/.vscode-root/Backups/1556691196738",
+            "uiState": {
+                "mode": 0,
+                "x": 0,
+                "y": 0,
+                "width": 1366,
+                "height": 768
+            }
+        }
+    }
+}
