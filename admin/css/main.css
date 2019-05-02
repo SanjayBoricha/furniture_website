@@ -60,8 +60,8 @@ div.left ul li:nth-child(1) {
 }
 
 div.left ul li {
-  font-size: 1.2rem;
-  text-align: center;
+  font-size: 1rem;
+  text-align: left;
   text-transform: capitalize;
 }
 
@@ -96,7 +96,7 @@ input[type="submit"],
 input[type="reset"] {
   border: none;
   padding: 0.3em 1em;
-  background: linear-gradient(45deg, rgb(0, 241, 32), rgb(0, 146, 7));
+  background: linear-gradient(45deg, rgb(71, 71, 71), rgb(41, 41, 41));
   color: #fff;
   cursor: pointer;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -123,7 +123,7 @@ input[type="file"]::before {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(255, 136, 0);
+  background: rgb(15, 202, 124);
   padding: 5px 8px;
   outline: none;
   white-space: nowrap;
@@ -134,7 +134,6 @@ input[type="file"]::before {
   z-index: 1;
   backface-visibility: hidden;
 }
-
 label {
   text-transform: capitalize;
 }
@@ -147,8 +146,42 @@ td {
   padding: 10px;
   height: 50px;
 }
-tr:last-child td:first-child {
+.form tr:last-child td:first-child {
   display: flex;
   justify-content: flex-end;
   width: 250px;
+}
+
+.filter {
+  display: none;
+}
+
+.table table tbody tr td img {
+  height: 50px;
+}
+.table table thead tr {
+  background: rgb(91, 212, 212);
+}
+.table table tbody tr {
+  background: #cdd;
+}
+.table table tbody tr:nth-child(odd) {
+  background: #8dd;
+}
+.table table tr td {
+  padding: 10px 20px;
+}
+
+.table table tbody tr td a {
+  padding: 5px 10px;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.delete {
+  background: rgb(211, 44, 22);
+}
+
+.edit {
+  background: rgb(23, 180, 23);
 }
