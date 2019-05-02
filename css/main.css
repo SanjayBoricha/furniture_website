@@ -20,6 +20,7 @@ html {
 }
 
 body {
+  width: 50vw;
   background: #eee;
   height: auto;
   position: relative;
@@ -152,7 +153,11 @@ header > ul li div.dropdown {
   position: absolute;
   top: 100%;
   width: 180%;
-  display: none;
+  display: block;
+  transform: scaleY(0);
+  opacity: 0;
+  transform-origin: top;
+  transition: 300ms;
   z-index: 100;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
 }
@@ -166,6 +171,12 @@ header ul li:hover {
 }
 header ul li:hover .dropdown {
   display: block;
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.active {
+  background: #ddd;
 }
 
 /* navbar ends */
@@ -174,13 +185,17 @@ header ul li:hover .dropdown {
 .products {
   width: 100vw;
   display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
   position: relative;
 }
 .product-card {
-  width: 300px;
+  min-width: 250px;
+  max-width: 400px;
   margin: 10px;
   background: #fff;
   position: relative;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -189,9 +204,11 @@ header ul li:hover .dropdown {
 }
 .product-card .product-img {
   position: relative;
+  width: 100%;
 }
 .product-card .product-img img {
-  width: 100%;
+  min-width: 230px;
+  max-width: 380px;
 }
 /* product card ends */
 
