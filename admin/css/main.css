@@ -24,7 +24,7 @@ body {
   width: 100vw;
   height: 100vh;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
   display: flex;
 }
 
@@ -41,11 +41,13 @@ div.left {
   background: #223;
   border-right: 5px solid #000;
   width: 20vw;
+  position: fixed;
 }
 div.left * {
   color: #fff;
 }
 div.right {
+  position: absolute;
   right: 0;
   width: 80vw;
   background: #eee;
@@ -70,7 +72,7 @@ p {
 }
 
 .form {
-  padding: 20px;
+  padding: 5px 20px;
 }
 
 select,
@@ -79,12 +81,14 @@ option {
   padding: 0.3em 0.5em;
   border: 1px solid #ddd;
   outline: none;
+  width: 300px;
   text-transform: capitalize;
 }
 
 input[type="text"],
 input[type="submit"],
 input[type="reset"] {
+  width: 300px;
   font-size: 0.95rem;
   padding: 0.3em 0.5em;
   border: 1px solid #ddd;
@@ -139,6 +143,7 @@ label {
 }
 
 table {
+  margin: 20px;
   border-collapse: collapse;
 }
 
@@ -150,10 +155,6 @@ td {
   display: flex;
   justify-content: flex-end;
   width: 250px;
-}
-
-.filter {
-  display: none;
 }
 
 .table table tbody tr td img {
@@ -185,3 +186,27 @@ td {
 .edit {
   background: rgb(23, 180, 23);
 }
+/* pagination starts */
+ul.pagination {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 10px;
+  justify-content: center;
+  margin: 20px;
+  padding: 2px;
+}
+ul.pagination li a {
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+  color: #999;
+}
+ul.pagination li a.active {
+  color: #000;
+}
+ul.pagination li a:hover {
+  color: #000;
+}
+/* pagination ends */

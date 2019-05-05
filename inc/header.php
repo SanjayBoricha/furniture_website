@@ -75,14 +75,20 @@ $result_cat = mysqli_query($conn, $query_cat);
                                 </a>
                             </ul>
                             <?php
-                    else:
+                        else:
                     ?>
                     <ul>
                         <a href="products.php?sc_id=<?php echo $sub_cat_id; ?>">
                             <li><?php echo $sub_category_name; ?></li>
                         </a>
                     </ul>
-                    <?php endif; endif; endwhile;?>
+                    <?php endif; else: ?>
+                    <ul>
+                        <a href="products.php?sc_id=<?php echo $sub_cat_id; ?>">
+                            <li><?php echo $sub_category_name; ?></li>
+                        </a>
+                    </ul>
+                    <?php endif; endwhile;?>
 
                 </div>
             </li>

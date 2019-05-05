@@ -1,5 +1,49 @@
 <?php $page_name = "Delete & Update Product";require "inc/header.php";?>
 
+<?php 
+function main($limit,$page,$start)
+{   
+    if (isset($_GET['sc_id'])){
+        $sc_id = $_GET['sc_id'];
+        $query_prod = "select * from products where sc_id='$sc_id' limit $start,$limit";
+    } else {
+        $query_prod = "select * from products limit $start,$limit";
+    }
+    return $query_prod;
+}
+
+function pagination($conn,$pagi)
+{
+    $limit = 10;
+    $page = isset($_GET['page']) ? $_GET['page'] : 1;
+    $start = ($page - 1) * $limit;
+    $query_prod = main($limit,$page,$start);
+    $products = mysqli_query($conn, $query_prod);
+    $result1 = mysqli_query($conn, "select count(p_id) as p_id from products");
+    $prodCount = mysqli_fetch_assoc($result1);
+    $total = $prodCount['p_id'];
+    $pages = ceil($total/$limit);
+    if ($pagi == true) {
+    ?>
+    <ul class="pagination">
+        <li>
+            <a href="duproduct.php?page=<?php if($page>1){ echo $page-1; }else { echo $page; } ?>"><</a>
+        </li>
+            <?php for($i = 1; $i <= $pages; $i++): ?>
+        <li>
+            <a <?php if(isset($page)): if($i == $page): echo 'class="active"'; endif; endif; ?> href="duproduct.php?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+        </li>
+            <?php endfor; ?>
+        <li>
+            <a href="duproduct.php?page=<?php if($page == $pages){ echo $page; }else{ echo $page+1; }?>">></a>
+        </li>
+    </ul>
+    <?php
+    }
+    return $products;
+}
+?>
+
 <div class="right">
     <h1><?php echo $page_name; ?></h1>
     <div class="filter">
@@ -22,6 +66,7 @@
                     while ($row_cat = mysqli_fetch_assoc($result_cat)):
                     $cat_id = $row_cat['c_id'];
                     $category_name = $row_cat["c_name"];
+                    
                 ?>
                     <option value="<?php echo $cat_id; ?>"><?php echo $category_name; ?></option>
                 <?php endwhile;?>
@@ -76,6 +121,7 @@
     </table>
     </div>
     <div class="table">
+        
         <table>
             <thead>
                 <tr>
@@ -89,15 +135,14 @@
             </thead>
             <tbody>
                 <?php
-                if (isset($_GET['sc_id'])):
-                $sc_id = $_GET['sc_id'];
-                $query_prod = "select * from products where sc_id='$sc_id'";
-                $products = mysqli_query($conn, $query_prod);
-                while ($product = mysqli_fetch_assoc($products)):
+                pagination($conn,true);
+                $new = pagination($conn,false);
+                while ($product = mysqli_fetch_assoc($new)):
                 $id = $product['p_id'];
                 $name = $product['p_name'];
                 $price = $product['price'];
                 $img = $product['p_image'];?>
+                
 
                     <tr>
                         <td><label><?php echo $id; ?></label></td>
@@ -107,9 +152,11 @@
                         <td><label><a class="edit" href="execute.php?op=edit&p_id='<?php echo $id; ?>'">edit</a></label></td>
                         <td><label><a class="delete" href="execute.php?op=delete&p_id='<?php echo $id; ?>'">delete</a></label></td>
                     </tr>
-                <?php endwhile; endif;?>
+                <?php endwhile;?>
+               
             </tbody>
         </table>
+        
     </div>
 </div>
 

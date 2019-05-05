@@ -1,4 +1,4 @@
-<?php $page_name = "Add Product";require "inc/header.php";?>
+<?php $page_name = "Add Product";require "inc/header.php";error_reporting(0);?>
 
 <div class="right">
     <h1><?php echo $page_name; ?></h1>

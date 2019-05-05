@@ -175,7 +175,7 @@ header ul li:hover .dropdown {
   opacity: 1;
 }
 
-.active {
+header ul li:hover .dropdown .active {
   background: #ddd;
 }
 
@@ -190,8 +190,8 @@ header ul li:hover .dropdown {
   position: relative;
 }
 .product-card {
-  min-width: 250px;
-  max-width: 400px;
+  min-width: 200px;
+  max-width: 300px;
   margin: 10px;
   background: #fff;
   position: relative;
@@ -202,15 +202,47 @@ header ul li:hover .dropdown {
   padding: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+.product-card * {
+  color: #000;
+}
+.product-card img[src="image/INR.svg"] {
+  position: relative;
+  height: 15px;
+  display: inline-block;
+}
 .product-card .product-img {
   position: relative;
   width: 100%;
 }
 .product-card .product-img img {
-  min-width: 230px;
-  max-width: 380px;
+  width: 100%;
 }
 /* product card ends */
+
+/* pagination starts */
+ul.pagination {
+  position: relative;
+  width: 100vw;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 10px;
+  justify-content: center;
+  margin: 20px;
+  padding: 2px;
+}
+ul.pagination li a {
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+  color: #999;
+}
+ul.pagination li a.active {
+  color: #000;
+}
+ul.pagination li a:hover {
+  color: #000;
+}
+/* pagination ends */
 
 /* footer begins */
 
