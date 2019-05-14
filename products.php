@@ -39,7 +39,7 @@ if (isset($_GET['sc_id'])):
 </div>
         <ul class="pagination">
             <li>
-                <a href="products.php"><</a>
+                <a href="products.php?sc_id=<?php echo $sc_id; ?>&page=<?php if($page>1) echo $page-1; else echo $page; ?>"><</a>
             </li>
             <?php for($i = 1; $i <= $pages; $i++): ?>
             <li>
@@ -47,7 +47,7 @@ if (isset($_GET['sc_id'])):
             </li>
             <?php endfor; ?>
             <li>
-                <a href="products.php">></a>
+                <a href="products.php?sc_id=<?php echo $sc_id; ?>&page=<?php if($page < $pages) echo $page+1; else echo $page;?>">></a>
             </li>
         </ul>
 <?php endif;?>

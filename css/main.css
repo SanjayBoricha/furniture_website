@@ -183,20 +183,16 @@ header ul li:hover .dropdown .active {
 
 /* product card begins */
 .products {
+  padding: 10px;
   width: 100vw;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
   position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 10px;
 }
 .product-card {
-  min-width: 200px;
-  max-width: 300px;
-  margin: 10px;
   background: #fff;
   position: relative;
-  flex-grow: 1;
-  display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px;
@@ -292,10 +288,10 @@ footer .form input[type="submit"] {
 footer div.acc,
 footer div.copyright {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   width: 100vw;
-  padding: 20px 250px;
+  padding: 20px;
 }
 
 footer div.acc {
@@ -353,15 +349,11 @@ footer div.copyright div p {
     overflow: hidden;
   }
   footer div.acc {
-    padding: 20px;
-    margin: 0;
+    justify-content: flex-start;
   }
-  footer div.copyright {
-    margin: 0;
-    padding: 20px;
-  }
-  footer div.form {
-    display: grid;
-    grid-gap: 20px;
+  footer div.acc > * {
+    padding-left: 10px;
+    padding-right: 100px;
+    padding-top: 10px;
   }
 }
