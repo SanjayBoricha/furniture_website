@@ -47,7 +47,13 @@ $result_cat = mysqli_query($conn, $query_cat);
                         <li><a href="#">Help Center</a></li>
                         <li><a href="logout.php">Sign Out</a></li>
                     </ul>
-                    <?php endif;?>
+                    <?php else:?>
+                    <ul class="dropdown">
+                        <li><a href="#">Recently Viewed</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="signin.php">Sign In</a></li>
+                    </ul>
+                    <?php endif; ?>
                 </div>
                 <div class="item">
                     <p>Cart</p>

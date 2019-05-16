@@ -23,7 +23,13 @@
         <div>
             <h2>Login</h2>
             <form action="process/signin-process.php" method="post">
-                <input type="text" name="mailuname" placeholder="User name or email" value="<?php if (isset($_GET['mailuname'])) { echo $_GET['mailuname']; } ?>"><br>
+                <input 
+                    type="text" 
+                    name="mailuname" 
+                    placeholder="User name or email" 
+                    value="<?php if (isset($_GET['mailuname'])) { echo $_GET['mailuname']; } ?>"
+                >
+                <br>
                 <input type="password" name="pwd" placeholder="Password"><br>
                 <button type="submit" name="login-submit">Submit</button>
             </form>
@@ -31,10 +37,9 @@
     </div>
 
     <div class="footer">
-        <p>&copy;Friend Furniture</p>
+        <p>&copy;<?php echo $app_name; ?></p>
         <p><a href="term-condition.php">Term & condition</a></p>
     </div>
 </body>
 
 </html>
-

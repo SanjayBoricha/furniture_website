@@ -344,6 +344,15 @@ footer div.copyright div p {
 
 /* footer ends */
 
+/* product.php style start */
+
+section.product {
+  width: 100%;
+  padding: 10px;
+}
+
+/* product.php style ends */
+
 @media (max-width: 768px) {
   header {
     overflow: hidden;
