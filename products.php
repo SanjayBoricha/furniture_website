@@ -3,7 +3,7 @@
 if (isset($_GET['sc_id'])):
     $sc_id = $_GET['sc_id'];
 
-    $limit = 10;
+    $limit = 12;
     $page = isset($_GET['page']) ? $_GET['page'] : 1;
     $start = ($page - 1) * $limit;
     $query_prod = "select * from products where sc_id='$sc_id' limit $start,$limit";
@@ -29,8 +29,8 @@ if (isset($_GET['sc_id'])):
             <div class="product-content">
                 <p class="product-name">
                     <?php echo $name; ?>
-                    <?php echo '<img src="image/INR.svg"/>',$price; ?>
                 </p>
+                <p class="product-price"><?php echo '<img src="image/INR.svg"/>',$price; ?></p>
             </div>
         </a>
     </div>

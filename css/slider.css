@@ -89,6 +89,9 @@ button#prev {
 .slide:nth-child(4) {
   background: url("../image/slider/4.jpg") no-repeat center center/cover;
 }
+.slide:nth-child(5) {
+  background: url("../image/slider/5.jpg") no-repeat center center/cover;
+}
 
 @media (max-width: 500px) {
   .slide .content {

@@ -1,5 +1,5 @@
 <?php
 
-$app_name = "Friend Furniture";
+$app_name = "perigold";
 
 ?>

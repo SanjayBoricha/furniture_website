@@ -83,6 +83,46 @@
                 </tr>
                 <tr>
                     <td>
+                        <label>Brand name</label>
+                    </td>
+                    <td>
+                        <input type="text" name="brand">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>description</label>
+                    </td>
+                    <td>
+                        <textarea cols="50" rows="6" name="description"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>features</label>
+                    </td>
+                    <td>
+                        <textarea name="features" cols="50" rows="6"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>weight</label>
+                    </td>
+                    <td>
+                        <input type="text" name="weight">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>specification</label>
+                    </td>
+                    <td>
+                        <input type="text" name="specification">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <label>product image</label>
                     </td>
                     <td>

@@ -51,7 +51,19 @@
     </div>
 </footer>
 <script>
+    var x = document.querySelector('.open');
+    var y = document.querySelectorAll('td');
 
+    x.addEventListener('click',()=>{
+        
+        y.forEach(td => {
+            if (td.style.display == "block") {
+                td.style.display = "none";
+            }else {
+                td.style.display = "block";
+            }
+        });
+    });
 </script>
 </body>
 

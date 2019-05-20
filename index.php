@@ -50,6 +50,15 @@ if (isset($_SESSION['u_type'])) {
           </p>
         </div>
       </div>
+      <div class="slide">
+        <div class="content">
+          <h1>Slide Five</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+            eveniet. Adipisci consequatur explicabo aperiam dignissimos.
+          </p>
+        </div>
+      </div>
     </div>
     <div class="buttons">
       <button id="prev"><=</button>
