@@ -45,26 +45,18 @@
         </div>
         <div class="social-network">
             <ul>
-                <li></li>
+                <li><img src="image/twitter.svg" width="25px"></li>
+                <li><img src="image/facebook.svg" width="25px"></li>
+                <li><img src="image/pinterest.svg" width="25px"></li>
+                <li><img src="image/instagram.svg" width="25px"></li>
             </ul>
         </div>
     </div>
 </footer>
 <script>
-    var x = document.querySelector('.open');
-    var y = document.querySelectorAll('td');
-
-    x.addEventListener('click',()=>{
-        
-        y.forEach(td => {
-            if (td.style.display == "block") {
-                td.style.display = "none";
-            }else {
-                td.style.display = "block";
-            }
-        });
-    });
+    
 </script>
+
 </body>
 
 </html>

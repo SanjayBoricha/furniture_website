@@ -2,7 +2,7 @@
 
 if (isset($_GET['sc_id'])):
     $sc_id = $_GET['sc_id'];
-
+         
     $limit = 12;
     $page = isset($_GET['page']) ? $_GET['page'] : 1;
     $start = ($page - 1) * $limit;
@@ -30,7 +30,7 @@ if (isset($_GET['sc_id'])):
                 <p class="product-name">
                     <?php echo $name; ?>
                 </p>
-                <p class="product-price"><?php echo '<img src="image/INR.svg"/>',$price; ?></p>
+                <p class="product-price"><?php echo '<span class="inr"></span>&nbsp;&nbsp;&nbsp;',$price; ?></p>
             </div>
         </a>
     </div>
@@ -53,4 +53,3 @@ if (isset($_GET['sc_id'])):
 <?php endif;?>
 
 <?php require "inc/footer.php"?>
-

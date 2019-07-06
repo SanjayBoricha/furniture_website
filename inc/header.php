@@ -10,6 +10,7 @@ if (isset($_SESSION['u_type'])) {
 
 require "config/db.php";
 require "config/config.php";
+require "unirest-php-master/src/unirest.php";
 $query_cat = "select * from category";
 $result_cat = mysqli_query($conn, $query_cat);
 ?>
