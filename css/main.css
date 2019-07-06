@@ -318,6 +318,11 @@ footer div.acc {
 footer div.acc div.contact-us ul li a {
   border: 1px solid #000;
   padding: 5px 10px;
+  transition: 0.3s;
+}
+footer div.acc div.contact-us ul li a:hover {
+  background: #000;
+  color: #ffffff;
 }
 
 footer div.acc div.contact-us ul li:nth-child(2) {
